@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ValidatorForm } from "react-form-validator-core";
 import Modal from "react-modal";
 
 import Button from "./components/Button/Button";
@@ -107,46 +106,44 @@ const App = () => {
         <Leaderboard handleShowModal={handleShowModal} />
 
         <Modal isOpen={showModal} style={customStyles}>
-          <ValidatorForm onSubmit={handleAdd} className="enterPlayer">
-            <InputField
-              name="firstName"
-              placeholder="First Name"
-              type="text"
-              onChange={e => setFirstName(e.target.value)}
-              value={firstName}
-            />
-            <InputField
-              name="lastName"
-              placeholder="Last Name"
-              type="text"
-              onChange={e => setLastName(e.target.value)}
-              value={lastName}
-            />
-            <InputField
-              name="wins"
-              placeholder="Wins"
-              type="text"
-              onChange={e => setWins(e.target.value)}
-              value={wins}
-              validators={["required"]}
-              errorMessages={["required"]}
-            />
-            <InputField
-              name="score"
-              placeholder="Score"
-              type="text"
-              onChange={e => setScore(e.target.value)}
-              value={score}
-            />
+          <InputField
+            name="firstName"
+            placeholder="First Name"
+            type="text"
+            onChange={e => setFirstName(e.target.value)}
+            value={firstName}
+          />
+          <InputField
+            name="lastName"
+            placeholder="Last Name"
+            type="text"
+            onChange={e => setLastName(e.target.value)}
+            value={lastName}
+          />
+          <InputField
+            name="wins"
+            placeholder="Wins"
+            type="text"
+            onChange={e => setWins(e.target.value)}
+            value={wins}
+            validators={["required"]}
+            errorMessages={["required"]}
+          />
+          <InputField
+            name="score"
+            placeholder="Score"
+            type="text"
+            onChange={e => setScore(e.target.value)}
+            value={score}
+          />
 
-            <Button style={{ margin: "10px 0 0 5px" }} onClick={handleAdd}>
-              SAVE
-            </Button>
+          <Button style={{ margin: "10px 0 0 5px" }} onClick={handleAdd}>
+            SAVE
+          </Button>
 
-            <Button style={{ margin: "0 0 0 5px" }} onClick={handleCancel}>
-              CANCEL
-            </Button>
-          </ValidatorForm>
+          <Button style={{ margin: "0 0 0 5px" }} onClick={handleCancel}>
+            CANCEL
+          </Button>
         </Modal>
       </ContextConfig.Provider>
     </div>

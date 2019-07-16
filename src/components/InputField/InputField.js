@@ -1,5 +1,4 @@
 import React from "react";
-import { ValidatorComponent } from "react-form-validator-core";
 import styled from "styled-components";
 
 const TextInput = styled.input`
@@ -18,34 +17,23 @@ const TextInput = styled.input`
   width: 100%;
 `;
 
-class InputField extends ValidatorComponent {
-  render() {
-    const {
-      errorMessages,
-      validators,
-      requiredError,
-      validatorListener,
-      ...rest
-    } = this.props;
-
-    return (
-      <div
-        style={{
-          position: "relative",
-          flex: 1,
-          display: "flex",
-          margin: "10px 0"
-        }}
-      >
-        <TextInput
-          {...rest}
-          ref={r => {
-            this.input = r;
-          }}
-        />
-      </div>
-    );
-  }
-}
+const InputField = ({
+  errorMessages,
+  validators,
+  requiredError,
+  validatorListener,
+  ...rest
+}) => (
+  <div
+    style={{
+      position: "relative",
+      flex: 1,
+      display: "flex",
+      margin: "10px 0"
+    }}
+  >
+    <TextInput {...rest} />
+  </div>
+);
 
 export default InputField;
